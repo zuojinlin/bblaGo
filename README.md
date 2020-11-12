@@ -60,3 +60,14 @@
       - 服务层service
       - axios的配置不够模块化 未添加路由守卫
       .......
+   - 雨露均沾：
+      - 生命周期
+      - vuex
+      - jsx
+      - slot
+      - Suspense 和 异步 setup
+      - 模块化
+   - 工程化
+      - git自动部署
+      - 单元测试
+      - UI
