@@ -1,15 +1,19 @@
 <template>
-  <div>
-    Home
-  </div>
+  <div>{{ user.msg }}</div>
 </template>
 
 <script>
-  export default {
-    
-  }
+import { reactive } from 'vue'
+import { useRoute } from 'vue-router'
+export default {
+  setup() {
+    const route = useRoute()
+    const user = reactive({
+      msg: route.params.msg,
+    })
+    return { user }
+  },
+}
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

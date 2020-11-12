@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
   {
@@ -16,9 +16,9 @@ const routes = [
     name: 'Login',
     component: () => import('/@/views/Login.vue'),
   },
-];
+]
 
 export default createRouter({
   history: createWebHistory(),
   routes,
-});
+})
