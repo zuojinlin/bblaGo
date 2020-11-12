@@ -14,3 +14,7 @@
    2. npm: 6.14.5
 3. 插件
    1. eslint stylelint
+
+## 2020年11月12日16:24:43更新：
+   1. 解决编程式路由跳转 router.push()
+   2. 存在问题： eslint中的template下根节点多个报错 

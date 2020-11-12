@@ -4,7 +4,7 @@ module.exports = {
   alias: {
     "/@/": path.resolve(__dirname, "./src"),
   },
-  optimizeDeps: {
-    include: ["@ant-design/icons-vue"],
-  },
+  // optimizeDeps: {
+  //   include: ["@ant-design/icons-vue"],
+  // },
 };
