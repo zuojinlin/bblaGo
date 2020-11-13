@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-
+import UserRoutes from './UserRoutes/UserRoutes'
+// console.log(UserRoutes)
 const routes = [
   {
     path: '/home',
@@ -11,11 +12,7 @@ const routes = [
     name: 'Setting',
     component: () => import('/@/views/Setting.vue'),
   },
-  {
-    path: '/login',
-    name: 'Login',
-    component: () => import('/@/views/Login.vue'),
-  },
+  ...UserRoutes,
 ]
 
 export default createRouter({

@@ -4,9 +4,15 @@ const Controller = require('egg').Controller;
 
 class LoginController extends Controller {
   async index() {
-    const { ctx } = this;
+    const { ctx, app } = this;
     const queryParams = ctx.request.body;
-    if (queryParams.user === 'lamjl' && queryParams.password === '123456') {
+    const result = await app.mysql.select('user', {
+      where: {
+        user: queryParams.user,
+        password: queryParams.password,
+      },
+    });
+    if (result && result.length > 0) {
       ctx.body = {
         code: 1,
         title: '登录成功',
@@ -15,11 +21,10 @@ class LoginController extends Controller {
     } else {
       ctx.body = {
         code: 2,
-        title: '登录失败',
-        msg: '用户名或密码错误',
+        title: '用户名或密码错误！',
+        msg: '用户名或密码错误！',
       };
     }
-
   }
 }
 
