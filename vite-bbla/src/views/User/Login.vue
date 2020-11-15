@@ -2,20 +2,27 @@
   <div class="b-welcome">
     <div class="b-title">欢迎~</div>
     <div>
-      <div>用户：<input v-model="form.user" placeholder="用户名" type="text" /></div>
-      <div>密码：<input v-model="form.password" placeholder="密码" type="password" /></div>
-      <div><button @click="login">登录</button></div>
-      <div><button @click="register">注册</button></div>
+      <ElFormItem>
+        <ElInput v-model="form.user" placeholder="用户名" type="text" />
+      </ElFormItem>
+      <ElFormItem>
+        <ElInput v-model="form.password" placeholder="密码" type="password" />
+      </ElFormItem>
+      <div>
+        <ElButton v-if="isLogin" class="loginBtn" type="primary" @click="login">登录</ElButton>
+        <ElButton v-else @click="register">注册</ElButton>
+      </div>
     </div>
   </div>
 </template>
 <script>
-import { reactive, getCurrentInstance } from 'vue'
+import { reactive, getCurrentInstance, ref } from 'vue'
 import { useRouter } from 'vue-router'
 export default {
   setup() {
     const router = useRouter()
     const { ctx } = getCurrentInstance()
+    const isLogin = ref(true)
     const form = reactive({
       user: '',
       password: '',
@@ -39,16 +46,26 @@ export default {
         name: 'Register',
       })
     }
-
-    const submit = function () {
-      if (form.user === 'lamjl' && form.password === '123456') {
-        console.log('登录成功')
-        router.push({
-          path: '/home',
-        })
-      }
-    }
-    return { form, submit, login, register }
+    return { form, login, register, isLogin }
   },
 }
 </script>
+<style>
+.b-welcome {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: 20px;
+  width: 400px;
+  border: 1px solid #ccc;
+  margin-left: -200px;
+  margin-top: -200px;
+  /* margin-top: -50%; */
+}
+.b-welcome .b-title {
+  padding: 10px;
+}
+.loginBtn {
+  width: 100%;
+}
+</style>

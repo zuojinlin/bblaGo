@@ -1,10 +1,18 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-11-13 15:05:49
+ * @LastEditTime: 2020-11-15 17:50:19
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /vite-bbla/src/views/User/Register.vue
+-->
 <template>
   <div class="b-welcome">
     <div class="b-title">欢迎~</div>
     <div>
-      <div>用户：<input v-model="form.user" placeholder="用户名" type="text" /></div>
-      <div>密码：<input v-model="form.password" placeholder="密码" type="password" /></div>
-      <div><button @click="register">注册</button></div>
+      <input v-model="form.user" placeholder="用户名" type="text" />
+      <input v-model="form.password" placeholder="密码" type="password" />
+      <div><ElButton @click="register">注册</ElButton></div>
     </div>
   </div>
 </template>
