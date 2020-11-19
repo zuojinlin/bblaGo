@@ -16,6 +16,7 @@ import 'element3/lib/theme-chalk/index.css'
 // 全量加载
 import Element3 from 'element3'
 import App from '/@/App.vue'
+// import Link from '../node_modules/element3/packages/link'
 const app = createApp(App)
 app.config.globalProperties.$axios = axios
 app.use(router)

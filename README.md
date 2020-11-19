@@ -81,3 +81,9 @@
    - 修改 login.vue样式
    - 配置sass失败
 感冒身体不适 周末偷偷懒先就酱汁吧
+## 2020年11月19日16:47:33更新：
+   我直接好家伙 创作枯竭了
+   - 重新配置sass成功 我也不知道怎么搞的 重新yarn add sass就能用了。。。
+   - 添加组件传值demo 父子相互传值 祖先孙子传值 
+      - 理论上inject应该是不能往回传值的 但是不报错还成功了 原因也没找到
+   - 添加TodoList demo 涉及到了computed ref toRefs reactive
